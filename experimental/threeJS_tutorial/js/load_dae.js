@@ -1,9 +1,13 @@
-var renderer = new THREE.WebGLRenderer();
-renderer.setSize( window.innerWidth, window.innerHeight );
+var renderer = new THREE.WebGLRenderer({
+    preserveDrawingBuffer: true 
+});
+
+
+renderer.setSize( window.innerWidth, window.innerHeight);
 document.body.appendChild( renderer.domElement );
 
 var camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 500 );
-camera.position.set( 0, 0, 10 );
+camera.position.set( 0, 0, 3 );
 camera.lookAt( 0, 0, 0 );
 var controls = new THREE.OrbitControls(camera);
 
@@ -16,7 +20,7 @@ var loadingManager = new THREE.LoadingManager(()=>{
 });
 
 var loader = new THREE.ColladaLoader( loadingManager );
-loader.load( './3.dae', function ( collada ) {
+loader.load( './dae/5.dae', function ( collada ) {
     elf = collada.scene;
 } );
 
