@@ -20,7 +20,7 @@ var loadingManager = new THREE.LoadingManager(()=>{
 });
 
 var loader = new THREE.ColladaLoader( loadingManager );
-loader.load( './dae/5.dae', function ( collada ) {
+loader.load( './dae/aaa.dae', function ( collada ) {//loader.load( './dae/5.dae', function ( collada ) {
     elf = collada.scene;
 } );
 

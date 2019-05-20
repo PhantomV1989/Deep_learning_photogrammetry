@@ -1,1 +1,9 @@
+20 May 2019
+DAE extract triangles -> to pytorch -> cumulative ANN -> reconstruct image vs threejs image
+
+
+20 May 2019
+gen_tri->sum tri_embed->to image
+
 webgl->images
+
