@@ -2,6 +2,7 @@ from PIL import Image
 from conf import *
 from triangle import *
 import xml.etree.ElementTree as ET
+import numpy as np
 
 '''
 Camera will always be at pointing with vector (0,0,-1), pointing downwards
@@ -17,11 +18,10 @@ class renderer:
 
     @staticmethod
     def get_triangles_from_DAE():
-        data = ET.parse('asd.xml').getroot()
-        for type_tag in data.findall('contributor/author'):
-            value = type_tag.get('foobar')
-            print(value)
-        return data
+        data = ET.parse(cf.dae_path).getroot()
+        raw = data[5][0][0][0][0].text.split(' ')
+        raw = np.asarray([float(x) for x in raw])
+        return raw.reshape([-1, 3])
 
     @staticmethod
     def triangles_to_DAE():
