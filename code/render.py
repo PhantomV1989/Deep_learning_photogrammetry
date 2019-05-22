@@ -13,15 +13,19 @@ Camera will always be at pointing with vector (0,0,-1), pointing downwards
 # im.save("your_file.jpeg")
 
 class renderer:
-    def __init__(self):
+    def __init__(self, dae_path):
+        self.dae_path = dae_path
+        self.dae = ET.parse(self.dae_path).getroot()
         return
 
-    @staticmethod
-    def get_triangles_from_DAE():
-        data = ET.parse(cf.dae_path).getroot()
-        raw = data[5][0][0][0][0].text.split(' ')
+    def get_triangles_from_DAE(self):
+        raw = self.dae[5][0][0][0][0].text.split(' ')
         raw = np.asarray([float(x) for x in raw])
         return raw.reshape([-1, 3])
+
+    def get_transformation_from_DAE(self):
+        self.dae[7][0][5][0].text.split(' ')
+        return
 
     @staticmethod
     def triangles_to_DAE():
