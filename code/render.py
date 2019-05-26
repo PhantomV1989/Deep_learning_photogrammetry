@@ -3,7 +3,7 @@ from conf import *
 from triangle import *
 import xml.etree.ElementTree as ET
 import numpy as np
-
+from conf import *
 '''
 Camera will always be at pointing with vector (0,0,-1), pointing downwards
 '''
@@ -13,15 +13,16 @@ Camera will always be at pointing with vector (0,0,-1), pointing downwards
 # im.save("your_file.jpeg")
 
 class renderer:
-    def __init__(self, dae_path):
-        self.dae_path = dae_path
+    def __init__(self):
+        self.dae_path = cf.dae_path
         self.dae = ET.parse(self.dae_path).getroot()
         return
 
     def get_triangles_from_DAE(self):
         raw = self.dae[5][0][0][0][0].text.split(' ')
         raw = np.asarray([float(x) for x in raw])
-        return raw.reshape([-1, 3])
+        tris = get_triangles_from_points(raw.reshape([-1, 3]))
+        return tris
 
     def get_transformation_from_DAE(self):
         self.dae[7][0][5][0].text.split(' ')

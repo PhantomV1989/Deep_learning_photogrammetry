@@ -20,6 +20,13 @@ def get_normal(triangle):
     denorm = tc.pow(tc.sum(tc.pow(tri_normal, 2)), 0.5)
     return tc.div(tri_normal, denorm)
 
+def get_triangles_from_points(points):
+    # sliding window for tris
+    t = []
+    for i in range(0,len(points)-2):
+        t.append(points[i:i+3])
+    return t
+
 
 def flip_normal(triangle):
     return

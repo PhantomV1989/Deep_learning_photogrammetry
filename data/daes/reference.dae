@@ -5,24 +5,21 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.79.0 commit date:2018-03-22, commit time:14:10, hash:f4dc9f9d68b</authoring_tool>
     </contributor>
-    <created>2019-05-22T23:27:05</created>
-    <modified>2019-05-22T23:27:05</modified>
+    <created>2019-05-27T00:11:38</created>
+    <modified>2019-05-27T00:11:38</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
   <library_lights>
-    <light id="Area_005-light" name="Area.005">
+    <light id="Sun_005-light" name="Sun.005">
       <technique_common>
-        <point>
+        <directional>
           <color sid="color">1 1 1</color>
-          <constant_attenuation>1</constant_attenuation>
-          <linear_attenuation>0</linear_attenuation>
-          <quadratic_attenuation>0.001599967</quadratic_attenuation>
-        </point>
+        </directional>
       </technique_common>
       <extra>
         <technique profile="blender">
-          <type sid="type" type="int">4</type>
+          <type sid="type" type="int">1</type>
           <flag sid="flag" type="int">0</flag>
           <mode sid="mode" type="int">1</mode>
           <gamma sid="blender_gamma" type="float">1</gamma>
@@ -79,18 +76,15 @@
         </technique>
       </extra>
     </light>
-    <light id="Area_004-light" name="Area.004">
+    <light id="Sun_004-light" name="Sun.004">
       <technique_common>
-        <point>
+        <directional>
           <color sid="color">1 1 1</color>
-          <constant_attenuation>1</constant_attenuation>
-          <linear_attenuation>0</linear_attenuation>
-          <quadratic_attenuation>0.001599967</quadratic_attenuation>
-        </point>
+        </directional>
       </technique_common>
       <extra>
         <technique profile="blender">
-          <type sid="type" type="int">4</type>
+          <type sid="type" type="int">1</type>
           <flag sid="flag" type="int">0</flag>
           <mode sid="mode" type="int">1</mode>
           <gamma sid="blender_gamma" type="float">1</gamma>
@@ -147,18 +141,15 @@
         </technique>
       </extra>
     </light>
-    <light id="Area_003-light" name="Area.003">
+    <light id="Sun_003-light" name="Sun.003">
       <technique_common>
-        <point>
+        <directional>
           <color sid="color">1 1 1</color>
-          <constant_attenuation>1</constant_attenuation>
-          <linear_attenuation>0</linear_attenuation>
-          <quadratic_attenuation>0.001599967</quadratic_attenuation>
-        </point>
+        </directional>
       </technique_common>
       <extra>
         <technique profile="blender">
-          <type sid="type" type="int">4</type>
+          <type sid="type" type="int">1</type>
           <flag sid="flag" type="int">0</flag>
           <mode sid="mode" type="int">1</mode>
           <gamma sid="blender_gamma" type="float">1</gamma>
@@ -215,18 +206,15 @@
         </technique>
       </extra>
     </light>
-    <light id="Area_002-light" name="Area.002">
+    <light id="Sun_002-light" name="Sun.002">
       <technique_common>
-        <point>
+        <directional>
           <color sid="color">1 1 1</color>
-          <constant_attenuation>1</constant_attenuation>
-          <linear_attenuation>0</linear_attenuation>
-          <quadratic_attenuation>0.001599967</quadratic_attenuation>
-        </point>
+        </directional>
       </technique_common>
       <extra>
         <technique profile="blender">
-          <type sid="type" type="int">4</type>
+          <type sid="type" type="int">1</type>
           <flag sid="flag" type="int">0</flag>
           <mode sid="mode" type="int">1</mode>
           <gamma sid="blender_gamma" type="float">1</gamma>
@@ -283,18 +271,15 @@
         </technique>
       </extra>
     </light>
-    <light id="Area_001-light" name="Area.001">
+    <light id="Sun_001-light" name="Sun.001">
       <technique_common>
-        <point>
+        <directional>
           <color sid="color">1 1 1</color>
-          <constant_attenuation>1</constant_attenuation>
-          <linear_attenuation>0</linear_attenuation>
-          <quadratic_attenuation>0.001599967</quadratic_attenuation>
-        </point>
+        </directional>
       </technique_common>
       <extra>
         <technique profile="blender">
-          <type sid="type" type="int">4</type>
+          <type sid="type" type="int">1</type>
           <flag sid="flag" type="int">0</flag>
           <mode sid="mode" type="int">1</mode>
           <gamma sid="blender_gamma" type="float">1</gamma>
@@ -351,18 +336,15 @@
         </technique>
       </extra>
     </light>
-    <light id="Area-light" name="Area">
+    <light id="Sun-light" name="Sun">
       <technique_common>
-        <point>
+        <directional>
           <color sid="color">1 1 1</color>
-          <constant_attenuation>1</constant_attenuation>
-          <linear_attenuation>0</linear_attenuation>
-          <quadratic_attenuation>0.001599967</quadratic_attenuation>
-        </point>
+        </directional>
       </technique_common>
       <extra>
         <technique profile="blender">
-          <type sid="type" type="int">4</type>
+          <type sid="type" type="int">1</type>
           <flag sid="flag" type="int">0</flag>
           <mode sid="mode" type="int">1</mode>
           <gamma sid="blender_gamma" type="float">1</gamma>
@@ -420,10 +402,24 @@
       </extra>
     </light>
   </library_lights>
-  <library_images/>
+  <library_images>
+    <image id="Material_Diffuse_Color" name="Material_Diffuse_Color">
+      <init_from>Material%20Diffuse%20Color.png</init_from>
+    </image>
+  </library_images>
   <library_effects>
     <effect id="Material-effect">
       <profile_COMMON>
+        <newparam sid="Material_Diffuse_Color-surface">
+          <surface type="2D">
+            <init_from>Material_Diffuse_Color</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="Material_Diffuse_Color-sampler">
+          <sampler2D>
+            <source>Material_Diffuse_Color-surface</source>
+          </sampler2D>
+        </newparam>
         <technique sid="common">
           <phong>
             <emission>
@@ -433,7 +429,7 @@
               <color sid="ambient">0 0 0 1</color>
             </ambient>
             <diffuse>
-              <color sid="diffuse">0.64 0.64 0.64 1</color>
+              <texture texture="Material_Diffuse_Color-sampler"/>
             </diffuse>
             <specular>
               <color sid="specular">0.5 0.5 0.5 1</color>
@@ -455,35 +451,45 @@
     </material>
   </library_materials>
   <library_geometries>
-    <geometry id="Cube-mesh" name="Cube">
+    <geometry id="Obj-mesh" name="Obj">
       <mesh>
-        <source id="Cube-mesh-positions">
-          <float_array id="Cube-mesh-positions-array" count="24">1 1 -1 1 -1 -1 -1 -0.9999998 -1 -0.9999997 1 -1 1 0.9999995 1 0.9999994 -1.000001 1 -1 -0.9999997 1 -1 1 1</float_array>
+        <source id="Obj-mesh-positions">
+          <float_array id="Obj-mesh-positions-array" count="24">1 1 -1 1 -1 -1 -1 -0.9999998 -1 -0.9999997 1 -1 1.000002 1.000001 1.000002 1.078539 -1.077638 1.077637 -1.07854 -1.077637 1.077637 -1.000002 1.000002 1.000002</float_array>
           <technique_common>
-            <accessor source="#Cube-mesh-positions-array" count="8" stride="3">
+            <accessor source="#Obj-mesh-positions-array" count="8" stride="3">
               <param name="X" type="float"/>
               <param name="Y" type="float"/>
               <param name="Z" type="float"/>
             </accessor>
           </technique_common>
         </source>
-        <source id="Cube-mesh-normals">
-          <float_array id="Cube-mesh-normals-array" count="36">0 0 -1 0 0 1 1 0 -2.38419e-7 0 -1 -4.76837e-7 -1 2.38419e-7 -1.49012e-7 2.68221e-7 1 2.38419e-7 0 0 -1 0 0 1 1 -5.96046e-7 3.27825e-7 -4.76837e-7 -1 0 -1 2.38419e-7 -1.19209e-7 2.08616e-7 1 0</float_array>
+        <source id="Obj-mesh-normals">
+          <float_array id="Obj-mesh-normals-array" count="36">0 0 -1 0 0.03734093 0.9993027 1 0 -1.19209e-6 0 -0.9993026 -0.0373423 -1 2.38418e-7 -1.07288e-6 2.98023e-7 1 -7.15254e-7 0 0 -1 0 0.03734099 0.9993026 0.9986749 0.0363909 -0.03639209 -3.88643e-7 -0.9993026 -0.03734183 -0.9986748 0.03639179 -0.03639256 2.08616e-7 1 -8.94068e-7</float_array>
           <technique_common>
-            <accessor source="#Cube-mesh-normals-array" count="12" stride="3">
+            <accessor source="#Obj-mesh-normals-array" count="12" stride="3">
               <param name="X" type="float"/>
               <param name="Y" type="float"/>
               <param name="Z" type="float"/>
             </accessor>
           </technique_common>
         </source>
-        <vertices id="Cube-mesh-vertices">
-          <input semantic="POSITION" source="#Cube-mesh-positions"/>
+        <source id="Obj-mesh-map-0">
+          <float_array id="Obj-mesh-map-0-array" count="72">0.6752357 0.3247643 0.9998314 1.68615e-4 0.6752356 1.68654e-4 1.68707e-4 0.01291507 0.337365 0.3502579 1.68615e-4 0.3375115 0.01276862 0.6877915 0.3373647 0.3631956 0.3373647 0.6877914 0.3377023 0.3502579 0.6748983 0.01291549 0.6748983 0.3375113 0.6748983 0.3631955 0.3503023 0.6877915 0.6748983 0.6877913 0.3247646 0.3375113 1.68707e-4 0.01291507 1.68615e-4 0.3375115 0.6752357 0.3247643 0.9998314 0.3247643 0.9998314 1.68615e-4 1.68707e-4 0.01291507 0.337365 1.68615e-4 0.337365 0.3502579 0.01276862 0.6877915 1.68615e-4 0.3505952 0.3373647 0.3631956 0.3377023 0.3502579 0.3377023 1.68615e-4 0.6748983 0.01291549 0.6748983 0.3631955 0.3377023 0.3505952 0.3503023 0.6877915 0.3247646 0.3375113 0.3247647 0.01291555 1.68707e-4 0.01291507</float_array>
+          <technique_common>
+            <accessor source="#Obj-mesh-map-0-array" count="36" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Obj-mesh-vertices">
+          <input semantic="POSITION" source="#Obj-mesh-positions"/>
         </vertices>
         <triangles material="Material-material" count="12">
-          <input semantic="VERTEX" source="#Cube-mesh-vertices" offset="0"/>
-          <input semantic="NORMAL" source="#Cube-mesh-normals" offset="1"/>
-          <p>0 0 2 0 3 0 7 1 5 1 4 1 4 2 1 2 0 2 5 3 2 3 1 3 2 4 7 4 3 4 0 5 7 5 4 5 0 6 1 6 2 6 7 7 6 7 5 7 4 8 5 8 1 8 5 9 6 9 2 9 2 10 6 10 7 10 0 11 3 11 7 11</p>
+          <input semantic="VERTEX" source="#Obj-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Obj-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Obj-mesh-map-0" offset="2" set="0"/>
+          <p>0 0 0 2 0 1 3 0 2 7 1 3 5 1 4 4 1 5 4 2 6 1 2 7 0 2 8 5 3 9 2 3 10 1 3 11 2 4 12 7 4 13 3 4 14 0 5 15 7 5 16 4 5 17 0 6 18 1 6 19 2 6 20 7 7 21 6 7 22 5 7 23 4 8 24 5 8 25 1 8 26 5 9 27 6 9 28 2 9 29 2 10 30 6 10 31 7 10 32 0 11 33 3 11 34 7 11 35</p>
         </triangles>
       </mesh>
     </geometry>
@@ -491,29 +497,29 @@
   <library_controllers/>
   <library_visual_scenes>
     <visual_scene id="Scene" name="Scene">
-      <node id="Area_005" name="Area_005" type="NODE">
-        <matrix sid="transform">-4.37114e-8 1 -3.25841e-7 0.004518509 1 4.37114e-8 1.7807e-7 0.0197878 1.7807e-7 -3.25841e-7 -1 -5.073696 0 0 0 1</matrix>
-        <instance_light url="#Area_005-light"/>
+      <node id="Sun_005" name="Sun_005" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 10 0 0 0 1</matrix>
+        <instance_light url="#Sun_005-light"/>
       </node>
-      <node id="Area_004" name="Area_004" type="NODE">
-        <matrix sid="transform">7.54979e-8 -1 1.09199e-14 0.004518509 1 7.54979e-8 -9.06475e-8 0.0197878 9.06475e-8 1.77636e-14 1 4.754651 0 0 0 1</matrix>
-        <instance_light url="#Area_004-light"/>
+      <node id="Sun_004" name="Sun_004" type="NODE">
+        <matrix sid="transform">-1 0 -8.74228e-8 0 0 1 0 0 8.74228e-8 0 -1 -10 0 0 0 1</matrix>
+        <instance_light url="#Sun_004-light"/>
       </node>
-      <node id="Area_003" name="Area_003" type="NODE">
-        <matrix sid="transform">-1 1.40209e-14 3.25841e-7 0 3.25841e-7 4.37114e-8 1 7.474455 -2.22045e-16 1 -4.37114e-8 0 0 0 0 1</matrix>
-        <instance_light url="#Area_003-light"/>
+      <node id="Sun_003" name="Sun_003" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 -4.37114e-8 -1 -10 0 1 -4.37114e-8 0 0 0 0 1</matrix>
+        <instance_light url="#Sun_003-light"/>
       </node>
-      <node id="Area_002" name="Area_002" type="NODE">
-        <matrix sid="transform">-4.37114e-8 4.37114e-8 1 7.43293 1 2.13273e-15 4.37114e-8 0.0197878 -2.22045e-16 1 -4.37114e-8 0 0 0 0 1</matrix>
-        <instance_light url="#Area_002-light"/>
+      <node id="Sun_002" name="Sun_002" type="NODE">
+        <matrix sid="transform">-1 -3.82137e-15 -8.74228e-8 0 -8.74228e-8 4.37114e-8 1 10 0 1 -4.37114e-8 0 0 0 0 1</matrix>
+        <instance_light url="#Sun_002-light"/>
       </node>
-      <node id="Area_001" name="Area_001" type="NODE">
-        <matrix sid="transform">-4.37114e-8 -4.37114e-8 -1 -8.013187 -1 1.68864e-15 4.37114e-8 0.0197878 -2.22045e-16 1 -4.37114e-8 0 0 0 0 1</matrix>
-        <instance_light url="#Area_001-light"/>
+      <node id="Sun_001" name="Sun_001" type="NODE">
+        <matrix sid="transform">-4.37114e-8 -4.88762e-7 -1 -10 1 -2.13645e-14 -4.37114e-8 0 0 -1 4.88762e-7 0 0 0 0 1</matrix>
+        <instance_light url="#Sun_001-light"/>
       </node>
-      <node id="Cube" name="Cube" type="NODE">
-        <matrix sid="transform">0.9998477 0.0174524 0 0 -0.0174524 0.9998477 0 0 0 0 1 0 0 0 0 1</matrix>
-        <instance_geometry url="#Cube-mesh" name="Cube">
+      <node id="Obj" name="Obj" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#Obj-mesh" name="Obj">
           <bind_material>
             <technique_common>
               <instance_material symbol="Material-material" target="#Material-material"/>
@@ -521,9 +527,9 @@
           </bind_material>
         </instance_geometry>
       </node>
-      <node id="Area" name="Area" type="NODE">
-        <matrix sid="transform">1 2.22045e-16 2.22045e-16 0 2.22045e-16 -4.37114e-8 -1 -6.766125 -2.22045e-16 1 -4.37114e-8 0 0 0 0 1</matrix>
-        <instance_light url="#Area-light"/>
+      <node id="Sun" name="Sun" type="NODE">
+        <matrix sid="transform">-3.33006e-8 7.20267e-8 1 10 0.7618285 -0.6477787 7.20267e-8 0 0.6477787 0.7618285 -3.33006e-8 0 0 0 0 1</matrix>
+        <instance_light url="#Sun-light"/>
       </node>
     </visual_scene>
   </library_visual_scenes>

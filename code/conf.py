@@ -5,9 +5,8 @@ class conf():
     def __init__(self):
         dir = os.getcwd()
         self.dir = dir
-        self.output_path = handle_path(self._up(dir) + '/output')
-        self.renderer_path = handle_path(self.output_path + '/renderer')
-        self.dae_path = self.output_path + '/renderer/main.dae'
+        self.output_path = handle_path(self._up(dir) + '/data')
+        self.obj_path = self.output_path + '/obj'
         return
 
     @staticmethod
