@@ -5,13 +5,31 @@ import xml.etree.ElementTree as ET
 def create_daes_from_obj_folder():  # check for already created daes!
     objs = os.listdir(cf.obj_path)
     objs = list(filter(lambda x: x.__contains__('.obj'), objs))
-    objs = [get_dae_data_format_from_obj_file(x) for x in objs]
+    objs = [from_obj_file_to_dae(x,cf.dae_ref) for x in objs]
 
     return
 
 
-def get_dae_data_format_from_obj_file(ofile):
-    objFormat = obj.process_obj_file(ofile)
+def from_obj_file_to_dae(ofile, daefile):
+    points, norms, faces = obj.process_obj_file(ofile)
+    if max([len(f) for f in faces]) > 3:
+        print(ofile + ' contains at least 1 face with more than 3 sides, not processing further.')
+    else:
+        ptag = [[ff.split('//') for ff in f] for f in faces]
+        ptag = sum(sum(ptag, []), [])
+        counts = len(faces)
+        ptag = ' '.join(ptag)
+        # <input semantic="VERTEX" source="#Obj-mesh-vertices" offset="0"/>
+        # <input semantic="NORMAL" source="#Obj-mesh-normals" offset="1"/>
+
+        flatten_points = sum(points, [])
+        count_points = len(points)
+
+        flatten_norms = sum(norms, [])
+        count_norms = len(norms)
+
+        dae_obj = ET.parse(daefile).getroot()
+        asd = dae_obj[5][0][0][0][0].text.split(' ')
     return
 
 
@@ -20,7 +38,7 @@ class obj:
     def get_objs():
         objs = os.listdir(cf.obj_path)
         objs = list(filter(lambda x: x.__contains__('.obj'), objs))
-        objs = [obj.process_obj_file(x,True) for x in objs]
+        objs = [obj.process_obj_file(x, True) for x in objs]
         return objs
 
     @staticmethod
@@ -33,7 +51,7 @@ class obj:
         with open(cf.obj_path + '/' + b, 'r') as file:
             d = file.readlines()
         for l in d:
-            l[-1].replace('\n', '')
+            l = l.replace('\n', '')
             l = l.split(' ')
             if l[0] == 'vn':
                 vn.append(_h(l[1:]))

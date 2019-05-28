@@ -7,6 +7,8 @@ class conf():
         self.dir = dir
         self.output_path = handle_path(self._up(dir) + '/data')
         self.obj_path = self.output_path + '/obj'
+        self.dae_path = self.output_path + '/daes'
+        self.dae_ref = self.dae_path + '/reference.dae'
         return
 
     @staticmethod
